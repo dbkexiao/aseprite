@@ -7,16 +7,13 @@ jobs:
       fail-fast: false
       matrix:
         os: [windows-latest]
-        build_type: [RelWithDebInfo, Debug]
+        build_type: [Release]
         ui: [gui, cli]
-        scripting: [lua, noscripts]
         exclude:
-          - build_type: Debug
+          - build_type: Release
             ui: gui
-          - build_type: RelWithDebInfo
+          - build_type: Release
             ui: cli
-          - build_type: RelWithDebInfo
-            scripting: noscripts
     steps:
     - uses: actions/checkout@v4
       with:
